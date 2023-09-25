@@ -1,3 +1,7 @@
+# Textures & Models
+***Trident***
+<br>Trident Entity Texture: minecraft:entity/trident.png
+<br>Trident Riptide Entity: minecraft:entity/trident_riptide.png
 # MODS
 ***Magic Weaponry***
-Grimoire of fire added in 1.0
+<br>Grimoire of fire added in 1.0
