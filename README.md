@@ -4,6 +4,7 @@
 <br>Trident Riptide Entity: minecraft:entity/trident_riptide.png
 <br>***Sheild***
 <br>Shield Model: minecraft:items/shield.json
+<br>Shield Blocking: minecraft:items/shield_blocking
 <br>Shield Texture: minecraft:entity/shield.png
 # MODS
 ***Magic Weaponry***
