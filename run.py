@@ -17,4 +17,4 @@ for url in urls:
   response = requests.get(url)
   with open(os.path.join(folder_path,url.split(r'/')[-1]),'wb') as file:
     file.write(response.content)
-  # run minecraft
+# run minecraft
