@@ -6,7 +6,7 @@ if path == '':
   path = path
 urls = input('url: ')
 if urls = '':
-  urls = requests.get('https://raw.githubusercontent.com/DarkestCodeYT/MODS/main/server/mods.txt').text.split(',')
+  urls = requests.get('https://raw.githubusercontent.com/DarkestCodeYT/MODS/main/server.txt').text.split(',')
 elif ',' in urls.split(''):
   urls = urls.split(',')
 else:
