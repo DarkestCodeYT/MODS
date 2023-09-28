@@ -1,1 +1,1 @@
-https://github.com/DarkestCodeYT/MODS/raw/main/server/mod.jar
+https://github.com/DarkestCodeYT/MODS/raw/main/server/mod.jar|https://github.com/DarkestCodeYT/MODS/raw/main/server/Optifine.jar
