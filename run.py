@@ -1,4 +1,4 @@
-import subprocess, pyautogui, requests, time, os
+import requests, os
 path = os.path.join(os.path.expanduser('~'),'AppData','Roaming','.minecraft')
 print(f'Default Path: {path}')
 path = input('What path is your minecraft')
