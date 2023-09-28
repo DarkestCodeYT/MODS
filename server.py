@@ -7,7 +7,7 @@ if path == '':
 urls = input('url: ')
 if urls = '':
   urls = requests.get('https://raw.githubusercontent.com/DarkestCodeYT/MODS/main/server/mods.txt').text.split(',')
-elif ',' in urls:
+elif ',' in urls.split(''):
   urls = urls.split(',')
 else:
   urls = requests.get(urls).text.split(',')
