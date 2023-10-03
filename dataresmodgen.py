@@ -9,16 +9,17 @@ def loop_input(text,values=['_']):
     return value if '_' in values or value in values
 file_path = 'mod.jar'
 output = 'mod'
+os.makedirs(output, exist_ok=True)
 modID = loop_input('modID> ')
-os.makedirs('fabric-'+output, exist_ok=True)
-os.makedirs('forge-'+output, exist_ok=True)
 username = loop_input('username> ')
 forge = loop_input('MineCraft Java Forge? Y or N\nAwnser> ',values=['Y','N'])
 if not os.path.exists(file_path):
-  with open('forge-'+file_path,'wb') as file:
-    file.write(requests.get('https://raw.githubusercontent.com/DarkestCodeYT/MODS/main/templates/forge.jar').content)
-  with open('fabric-'+file_path,'wb') as file:
-    file.write(requests.get('https://raw.githubusercontent.com/DarkestCodeYT/MODS/main/templates/forge.jar').content)
-with zipfile.ZipFile('forge-'+file_path, 'r') as file:
-  file.extractall('forge-'+output)
-os.remove('forge-'+file_path)
+  if forge == 'Y':
+    with open(file_path,'wb') as file:
+      file.write(requests.get('https://raw.githubusercontent.com/DarkestCodeYT/MODS/main/templates/forge.jar').content)
+  else:
+    with open(file_path,'wb') as file:
+      file.write(requests.get('https://raw.githubusercontent.com/DarkestCodeYT/MODS/main/templates/fabric.jar').content)
+with zipfile.ZipFile(file_path, 'r') as file:
+  file.extractall(output)
+os.remove(file_path)
