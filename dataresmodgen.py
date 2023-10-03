@@ -4,10 +4,9 @@ import os
 def loop_input(text,values=['_']):
   value = input(text)
   if value == '':
-    loop_input(text)
-  else:
-    if '_' in values or value in values:
-      return value 
+    return loop_input(text)
+  if '_' in values or value in values:
+    return value
 file_path = 'mod.jar'
 output = 'mod'
 os.makedirs(output, exist_ok=True)
