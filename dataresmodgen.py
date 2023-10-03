@@ -37,3 +37,14 @@ if not os.path.exists(output):
       file.writelines(lines)
     del lines
 print(os.listdir(output))
+print('data: ')
+for i in os.listdir(os.path.join(output,'data')):
+  print(i+'> ')
+  if not '.' in i:
+    print(os.listdir(os.path.join(output,'data',i)))
+print('assets: ')
+for i in os.listdir(os.path.join(output,'assets')):
+  print(i+'> ')
+  if not '.' in i:
+    print(os.listdir(os.path.join(output,'assets',i)))
+#
