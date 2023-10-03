@@ -9,15 +9,16 @@ def loop_input(text,values=['_']):
     return value
 file_path = 'mod.jar'
 output = 'mod'
-os.makedirs(output, exist_ok=True)
 modID = loop_input('modID> ')
 username = loop_input('username> ')
 forge = loop_input('MineCraft Java Forge? Y or N\nAwnser> ',values=['Y','N'])
 if not os.path.exists(file_path):
   if forge == 'Y':
+    os.makedirs(output, exist_ok=True)
     with open(file_path,'wb') as file:
       file.write(requests.get('https://raw.githubusercontent.com/DarkestCodeYT/MODS/main/templates/forge.jar').content)
   elif forge == 'N':
+    os.makedirs(output, exist_ok=True)
     with open(file_path,'wb') as file:
       file.write(requests.get('https://raw.githubusercontent.com/DarkestCodeYT/MODS/main/templates/fabric.jar').content)
   else:
