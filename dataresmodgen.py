@@ -6,11 +6,10 @@ def loop_input(text,values=['_']):
     return value
   else:
     return loop_input(text,values)
-file_path = 'mod.jar'#loop_input('file location> ')
+file_path = 'mod.jar'
 output = file_path.replace('.jar','')
 if not os.path.exists(output):
-  modID = 'shade'#loop_input('modID> ')
-  username = 'dark_angel071219'#loop_input('username> ')
+  modID = 'shade'
   forge = loop_input('MineCraft Java Forge? Y or N\nAwnser> ',values=['Y','N'])
   import requests
   if forge == 'Y':
@@ -33,7 +32,6 @@ if not os.path.exists(output):
     with open(os.path.join(output,'META-INF','mods.toml'),'r') as file:
       lines = file.readlines()
     lines[5] = f'modId="{modID}"'
-    lines[7] = f'displayName="{modID}"'
     with open(os.path.join(output,'META-INF','mods.toml'),'w') as file:
       file.writelines(lines)
     del lines
@@ -41,3 +39,4 @@ if os.path.exists(output):
   print(f'{os.listdir(output)}')
   for root, dirs, files in os.walk(output):
     print(f'\nroot: {root}\ndirs: {dirs}\nfiles: {files}')
+  #
