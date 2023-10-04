@@ -1,3 +1,4 @@
+# https://replit.com/@DarkAngel53/SimilarPointedRuntimelibrary#main.py
 import os
 def loop_input(text,values=['_']):
   value = input(text)
@@ -36,15 +37,6 @@ if not os.path.exists(output):
     with open(os.path.join(output,'META-INF','mods.toml'),'w') as file:
       file.writelines(lines)
     del lines
-print(os.listdir(output))
-#
-for namespace in os.listdir(os.path.join(output,'data')):
-  print(f'datapack: {namespace}')
-  for i in os.listdir(os.path.join(output,'data',namespace)):
-    print(f'folder> {i}')
-    print(os.listdir(os.path.join(output,'data',namespace,i)))
-    for x in os.listdir(os.path.join(output,'data',namespace,i)):
-      os.remove(os.path.join(output,'data',namespace,i,x))
-    os.remove(os.path.join(output,'data',namespace,i))
-  os.remove(os.path.join(output,'data',namespace))
-#
+print(f'{os.listdir(output)}')
+for dir,folder,file in os.walk(output):
+  print(f'\ndirectory: {dir}\nfiles: {file}')
