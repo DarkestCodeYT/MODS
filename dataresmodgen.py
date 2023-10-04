@@ -1,19 +1,17 @@
-import requests
-import zipfile
-import time
 import os
 def loop_input(text,values=['_']):
   value = input(text)
-  if value == '':
-    return loop_input(text)
-  if '_' in values or value in values:
+  if value != '' and '_' in values or value in values:
     return value
-file_path = 'mod.jar'
-output = 'mod'
-modID = 'shade'#loop_input('modID> ')
-username = 'dark_angel071219'#loop_input('username> ')
-forge = 'N'#loop_input('MineCraft Java Forge? Y or N\nAwnser> ',values=['Y','N'])
+  else:
+    return loop_input(text,values)
+file_path = 'mod.jar'#loop_input('file location> ')
+output = file_path.replace(file_path.split('/')[-1],file_path.split('/')[-1].split('.')[0])
 if not os.path.exists(output):
+  modID = 'shade'#loop_input('modID> ')
+  username = 'dark_angel071219'#loop_input('username> ')
+  forge = loop_input('MineCraft Java Forge? Y or N\nAwnser> ',values=['Y','N'])
+  import requests
   if forge == 'Y':
     with open(file_path,'wb') as file:
       file.write(requests.get('https://raw.githubusercontent.com/DarkestCodeYT/MODS/main/templates/forge.jar').content)
@@ -22,7 +20,9 @@ if not os.path.exists(output):
       file.write(requests.get('https://raw.githubusercontent.com/DarkestCodeYT/MODS/main/templates/fabric.jar').content)
   else:
     raise Exception('ERROR')
+  import time
   time.sleep(0.1)
+  import zipfile
   with zipfile.ZipFile(file_path, 'r') as file:
     file.extractall(output)
   os.remove(file_path)
@@ -37,14 +37,14 @@ if not os.path.exists(output):
       file.writelines(lines)
     del lines
 print(os.listdir(output))
-print('data: ')
-for i in os.listdir(os.path.join(output,'data')):
-  print(i+'> ')
-  if not '.' in i:
-    print(os.listdir(os.path.join(output,'data',i)))
-print('assets: ')
-for i in os.listdir(os.path.join(output,'assets')):
-  print(i+'> ')
-  if not '.' in i:
-    print(os.listdir(os.path.join(output,'assets',i)))
+#
+for namespace in os.listdir(os.path.join(output,'data')):
+  print(f'datapack: {namespace}')
+  for i in os.listdir(os.path.join(output,'data',namespace)):
+    print(f'folder> {i}')
+    print(os.listdir(os.path.join(output,'data',namespace,i)))
+    for x in os.listdir(os.path.join(output,'data',namespace,i)):
+      os.remove(os.path.join(output,'data',namespace,i,x))
+    os.remove(os.path.join(output,'data',namespace,i))
+  os.remove(os.path.join(output,'data',namespace))
 #
