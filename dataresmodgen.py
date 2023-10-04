@@ -1,4 +1,5 @@
-# https://github.com/DarkestCodeYT/MODS/blob/main/dataresmodgen.py - https://replit.com/@DarkAngel53/SimilarPointedRuntimelibrary#main.py
+# https://github.com/DarkestCodeYT/MODS/blob/main/dataresmodgen.py
+# https://replit.com/@DarkAngel53/SimilarPointedRuntimelibrary#main.py
 import os
 def loop_input(text,values=['_']):
   value = input(text)
