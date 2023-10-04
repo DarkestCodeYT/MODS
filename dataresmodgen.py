@@ -7,7 +7,7 @@ def loop_input(text,values=['_']):
   else:
     return loop_input(text,values)
 file_path = 'mod.jar'#loop_input('file location> ')
-output = file_path.replace(file_path.split('/')[-1],file_path.split('/')[-1].split('.')[0])
+output = file_path.replace('.jar','')
 if not os.path.exists(output):
   modID = 'shade'#loop_input('modID> ')
   username = 'dark_angel071219'#loop_input('username> ')
@@ -37,6 +37,7 @@ if not os.path.exists(output):
     with open(os.path.join(output,'META-INF','mods.toml'),'w') as file:
       file.writelines(lines)
     del lines
-print(f'{os.listdir(output)}')
-for dir,folder,file in os.walk(output):
-  print(f'\ndirectory: {dir}\nfiles: {file}')
+if os.path.exists(output):
+  print(f'{os.listdir(output)}')
+  for root, dirs, files in os.walk(output):
+    print(f'\nroot: {root}\ndirs: {dirs}\nfiles: {files}')
