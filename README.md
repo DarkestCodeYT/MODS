@@ -1,6 +1,1 @@
-# Textures & Models
-***Trident*** <assets/minecraft/textures> minecraft:item/trident.png
-<br>***Trident*** <assets/minecraft/textures> minecraft:entity/trident.png
-<br>***Trident*** <assets/minecraft/textures> minecraft:entity/trident_riptide.png
-<br>***Shield*** <assets/minecraft/models> minecraft:items/shield.json
-<br>***Shield*** <assets/minecraft/textures> minecraft:entity/shield.png
+# https://github.com/InventivetalentDev/minecraft-assets/tree/1b7a1d48b0343c0b8da80604598707df428dc32a/assets
